@@ -14,7 +14,7 @@ const Footer = () => {
               className="h-8 w-auto mb-4 brightness-0 invert"
             />
             <p className="text-sm text-primary-foreground/80 mb-4">
-              Wenn dein Giveaway Eindruck macht - war's Markeffect.
+              Anderter Str. 36c · 30629 Hannover
             </p>
             <p className="text-sm text-primary-foreground/80">
               Hochwertige, individuell gebrandete Giveaways für Unternehmen aller Branchen.
