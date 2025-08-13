@@ -8,7 +8,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Unternehmen */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Markeffect</h3>
+            <img 
+              src="/lovable-uploads/bf08d9bc-5a00-4904-aab3-8395f51527d6.png" 
+              alt="Markeffect Logo" 
+              className="h-8 w-auto mb-4 brightness-0 invert"
+            />
             <p className="text-sm text-primary-foreground/80 mb-4">
               Wenn dein Giveaway Eindruck macht - war's Markeffect.
             </p>

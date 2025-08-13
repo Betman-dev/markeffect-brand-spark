@@ -25,9 +25,11 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-primary">
-              Mark<span className="text-secondary">effect</span>
-            </div>
+            <img 
+              src="/lovable-uploads/bf08d9bc-5a00-4904-aab3-8395f51527d6.png" 
+              alt="Markeffect Logo" 
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
