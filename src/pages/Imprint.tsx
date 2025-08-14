@@ -27,16 +27,14 @@ const Imprint = () => {
                 </h2>
                 <div className="bg-muted p-8 rounded-lg">
                   <p className="text-muted-foreground mb-2">
-                    <strong className="text-primary">Markeffect GmbH</strong>
+                    <strong className="text-primary">Markeffect</strong>
                   </p>
                   <p className="text-muted-foreground mb-2">
-                    Musterstraße 123<br />
-                    12345 Musterstadt<br />
+                    Anderter Str. 36c<br />
+                    30629 Hannover<br />
                     Deutschland
                   </p>
                   <p className="text-muted-foreground mb-2">
-                    <strong>Telefon:</strong> +49 (0) 123 456 789<br />
-                    <strong>Telefax:</strong> +49 (0) 123 456 799<br />
                     <strong>E-Mail:</strong> <a href="mailto:info@markeffect.de" className="text-secondary hover:underline">info@markeffect.de</a><br />
                     <strong>Website:</strong> <a href="https://www.markeffect.de" className="text-secondary hover:underline">www.markeffect.de</a>
                   </p>
@@ -49,7 +47,7 @@ const Imprint = () => {
                 </h2>
                 <div className="bg-muted p-6 rounded-lg">
                   <p className="text-muted-foreground mb-2">
-                    <strong>Registergericht:</strong> Amtsgericht Musterstadt<br />
+                    <strong>Registergericht:</strong> Amtsgericht Hannover<br />
                     <strong>Registernummer:</strong> HRB 123456<br />
                     <strong>Umsatzsteuer-ID:</strong> DE123456789 (gemäß §27a Umsatzsteuergesetz)
                   </p>
@@ -61,7 +59,7 @@ const Imprint = () => {
                   Geschäftsführung
                 </h2>
                 <p className="text-muted-foreground mb-4">
-                  Max Mustermann, Maria Musterfrau
+                  Max Mustermann
                 </p>
               </section>
 
@@ -72,8 +70,8 @@ const Imprint = () => {
                 <div className="bg-muted p-6 rounded-lg">
                   <p className="text-muted-foreground mb-2">
                     Max Mustermann<br />
-                    Musterstraße 123<br />
-                    12345 Musterstadt
+                    Anderter Str. 36c<br />
+                    30629 Hannover
                   </p>
                 </div>
               </section>
@@ -167,8 +165,7 @@ const Imprint = () => {
                 </p>
                 <div className="bg-secondary/10 p-6 rounded-lg border-l-4 border-secondary">
                   <p className="text-muted-foreground">
-                    <strong>E-Mail:</strong> <a href="mailto:legal@markeffect.de" className="text-secondary hover:underline">legal@markeffect.de</a><br />
-                    <strong>Telefon:</strong> +49 (0) 123 456 789
+                    <strong>E-Mail:</strong> <a href="mailto:info@markeffect.de" className="text-secondary hover:underline">info@markeffect.de</a>
                   </p>
                 </div>
               </section>

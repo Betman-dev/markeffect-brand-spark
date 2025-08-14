@@ -30,13 +30,12 @@ const Privacy = () => {
                 </p>
                 <div className="bg-muted p-6 rounded-lg">
                   <p className="text-muted-foreground mb-2">
-                    <strong>Markeffect GmbH</strong><br />
-                    Musterstraße 123<br />
-                    12345 Musterstadt<br />
+                    <strong>Markeffect</strong><br />
+                    Anderter Str. 36c<br />
+                    30629 Hannover<br />
                     Deutschland
                   </p>
                   <p className="text-muted-foreground mb-2">
-                    Telefon: +49 (0) 123 456 789<br />
                     E-Mail: info@markeffect.de
                   </p>
                 </div>
