@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Star, Users, Award, CheckCircle, Zap, Clock, Palette, HeadphonesIcon, TrendingUp } from "lucide-react";
+import { ArrowRight, Award, Zap, Palette, HeadphonesIcon, TrendingUp } from "lucide-react";
 import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
-import heroGiveaways from "../assets/hero-giveaways.jpg";
+import heroProductMosaic from "../assets/hero-product-mosaic.jpg";
 import powerbankMockup from "../assets/powerbank-mockup.jpg";
 import notebookMockup from "../assets/notebook-mockup.jpg";
 import mugMockup from "../assets/mug-mockup.jpg";
@@ -11,27 +11,27 @@ import usbMockup from "../assets/usb-mockup.jpg";
 const Homepage = () => {
   const usps = [
     {
-      icon: <Award className="h-8 w-8 text-primary" />,
+      icon: <Award className="h-6 w-6" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
       title: "Premium-Qualität aus der EU",
       description: "sorgfältig ausgewählte Lieferanten."
     },
     {
-      icon: <Zap className="h-8 w-8 text-primary" />,
+      icon: <Zap className="h-6 w-6" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
       title: "Schnelle Abwicklung",
       description: "verlässliche Zeitpläne und klare Kommunikation."
     },
     {
-      icon: <Palette className="h-8 w-8 text-primary" />,
+      icon: <Palette className="h-6 w-6" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
       title: "Individuelle Veredelung",
       description: "Siebdruck, Stick, Gravur, Digitaldruck."
     },
     {
-      icon: <HeadphonesIcon className="h-8 w-8 text-primary" />,
+      icon: <HeadphonesIcon className="h-6 w-6" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
       title: "Beratung & Design",
       description: "Mockups und Druckdaten-Check inklusive."
     },
     {
-      icon: <TrendingUp className="h-8 w-8 text-primary" />,
+      icon: <TrendingUp className="h-6 w-6" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
       title: "Skalierbar",
       description: "von kleinen Serien bis Großauflagen."
     }
@@ -63,7 +63,7 @@ const Homepage = () => {
       note: "Auf Anfrage | Individuelle Kalkulation"
     },
     {
-      image: heroGiveaways,
+      image: heroProductMosaic,
       title: "Nachhaltig/Eco",
       description: "Recycelt & biobasiert – Wirkung ohne Greenwashing.",
       note: "Auf Anfrage | Individuelle Kalkulation"
@@ -92,38 +92,48 @@ const Homepage = () => {
       />
       
       {/* Hero Section */}
-      <section className="bg-gradient-hero py-20 lg:py-32">
+      <section className="hero py-28 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="fade-in">
-              <h1 className="text-4xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-                Giveaways mit Markenwirkung –
-                <span className="text-secondary block">
-                  individuell veredelt.
-                </span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+            <div className="max-w-[62ch] py-12 lg:py-24">
+              <div className="inline-block px-3 py-1 bg-white/80 rounded-full text-xs font-medium mb-6" 
+                   style={{ color: 'hsl(var(--mx-ink-300))' }}>
+                Auf Anfrage · Antwort in 24–48 h
+              </div>
+              <h1 className="hero mb-8">
+                Giveaways mit Markenwirkung – individuell veredelt.
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Wir entwickeln Werbeartikel, die deine Marke greifbar machen. 
-                EU-Qualität, schnelle Abwicklung, saubere Veredelung.
+              <p className="lead mb-10">
+                Beratung, Mockups & EU-Produktion. Wir liefern termingerecht – ohne Preisliste, 
+                mit passender Kalkulation zu deinem Projekt.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/kontakt" className="btn-hero-primary">
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <Link to="/kontakt" className="btn-primary inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-300">
                   Angebot anfragen
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-                <Link to="/galerie" className="btn-hero-outline">
+                <Link to="/galerie" className="btn-secondary inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-300">
                   Beispiele ansehen
                 </Link>
               </div>
+              <p className="text-sm" style={{ color: 'hsl(var(--mx-ink-300))' }}>
+                Wir melden uns innerhalb von 24–48 Stunden.
+              </p>
             </div>
-            <div className="fade-in-delay-1">
-              <div className="image-hover">
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-white shadow-xl">
                 <img
-                  src={heroGiveaways}
-                  alt="Premium Werbeartikel und Giveaways von Markeffect"
-                  className="w-full h-auto rounded-xl shadow-strong"
+                  src={heroProductMosaic}
+                  alt="Premium Werbeartikel Sortiment – Tassen, Powerbanks und Textilien mit professioneller Veredelung"
+                  className="w-full h-full object-cover"
                 />
               </div>
+              <div 
+                className="absolute inset-0 rounded-2xl"
+                style={{
+                  background: 'radial-gradient(circle at 30% 50%, transparent 40%, hsl(var(--mx-hero-bg)) 80%)'
+                }}
+              />
             </div>
           </div>
         </div>
@@ -141,10 +151,10 @@ const Homepage = () => {
                 <div className="flex justify-center mb-4">
                   {usp.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-primary mb-2">
+                <h3 className="text-lg font-semibold mb-2" style={{ color: 'hsl(var(--mx-ink-600))' }}>
                   {usp.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm" style={{ color: 'hsl(var(--mx-ink-300))' }}>
                   {usp.description}
                 </p>
               </div>

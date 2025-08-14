@@ -51,7 +51,7 @@ const Navigation = () => {
               to="/kontakt"
               className="btn-hero-primary"
             >
-              Jetzt anfragen
+              Angebot anfragen
             </Link>
           </div>
 
@@ -94,7 +94,7 @@ const Navigation = () => {
               onClick={() => setIsMenuOpen(false)}
               className="block mx-3 mt-4 btn-hero-primary text-center"
             >
-              Jetzt anfragen
+              Angebot anfragen
             </Link>
           </div>
         </div>

@@ -19,6 +19,15 @@ Farbpalette: Weiß, Anthrazit, Hellblau
     /* Sekundärfarbe - dunkleres Grau #0B1E2E */
     --secondary: 208 56% 11%;
     --secondary-foreground: 0 0% 100%;
+
+    /* Markeffect Design Tokens */
+    --mx-primary: 208 67% 20%;
+    --mx-ink-900: 206 66% 11%;
+    --mx-ink-800: 206 56% 18%;
+    --mx-ink-700: 206 44% 24%;
+    --mx-ink-600: 206 37% 31%;
+    --mx-ink-300: 206 17% 58%;
+    --mx-hero-bg: 208 64% 97%;
     
     /* Elegante neutrale Töne */
     --muted: 211 19% 96%;
@@ -130,6 +139,40 @@ Farbpalette: Weiß, Anthrazit, Hellblau
 }
 
 @layer components {
+  /* Hero Section Styles */
+  .hero {
+    background: hsl(var(--mx-hero-bg));
+  }
+  
+  .hero h1 {
+    color: hsl(var(--mx-ink-700));
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    font-size: clamp(32px, 4.2vw, 56px);
+  }
+  
+  .hero p.lead {
+    color: hsl(var(--mx-ink-600));
+    font-size: clamp(16px, 1.6vw, 18px);
+    line-height: 1.6;
+  }
+  
+  .btn-primary {
+    background: hsl(var(--mx-primary));
+    color: #fff;
+  }
+  
+  .btn-secondary {
+    border: 1.5px solid hsl(var(--mx-primary));
+    color: hsl(var(--mx-primary));
+    background: transparent;
+  }
+  
+  .btn-secondary:hover {
+    background: color-mix(in oklab, hsl(var(--mx-primary)) 12%, white);
+  }
+
   /* Hero Button Variants */
   .btn-hero-primary {
     @apply bg-secondary text-secondary-foreground px-8 py-4 rounded-lg font-semibold
