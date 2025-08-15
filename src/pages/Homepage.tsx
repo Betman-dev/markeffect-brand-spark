@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Award, Zap, Palette, HeadphonesIcon, TrendingUp } from "lucide-react";
+import { ArrowRight, Target, CheckCircle, Clock, Users, Sparkles } from "lucide-react";
 import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
+import FAQ from "../components/FAQ";
 import heroProductMosaic from "../assets/hero-product-mosaic.jpg";
 import powerbankMockup from "../assets/powerbank-mockup.jpg";
 import notebookMockup from "../assets/notebook-mockup.jpg";
@@ -11,29 +12,29 @@ import usbMockup from "../assets/usb-mockup.jpg";
 const Homepage = () => {
   const usps = [
     {
-      icon: <Award className="h-6 w-6" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
-      title: "Premium-Qualität aus der EU",
-      description: "sorgfältig ausgewählte Lieferanten."
+      icon: <Target className="h-6 w-6 stroke-1" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
+      title: "Auf Anfrage",
+      description: "Keine Preislisten – individuelle Kalkulation zu deinem Projekt"
     },
     {
-      icon: <Zap className="h-6 w-6" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
-      title: "Schnelle Abwicklung",
-      description: "verlässliche Zeitpläne und klare Kommunikation."
+      icon: <CheckCircle className="h-6 w-6 stroke-1" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
+      title: "EU-Produktion", 
+      description: "Hochwertige Veredelung, kurze Wege, faire Preise"
     },
     {
-      icon: <Palette className="h-6 w-6" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
-      title: "Individuelle Veredelung",
-      description: "Siebdruck, Stick, Gravur, Digitaldruck."
+      icon: <Clock className="h-6 w-6 stroke-1" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
+      title: "Schnelle Entwürfe",
+      description: "Mockups und erste Vorschläge innerhalb von 24 Stunden"
     },
     {
-      icon: <HeadphonesIcon className="h-6 w-6" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
-      title: "Beratung & Design",
-      description: "Mockups und Druckdaten-Check inklusive."
+      icon: <Users className="h-6 w-6 stroke-1" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
+      title: "Persönliche Betreuung",
+      description: "Direkter Draht zu deinem Ansprechpartner – kein Callcenter"
     },
     {
-      icon: <TrendingUp className="h-6 w-6" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
-      title: "Skalierbar",
-      description: "von kleinen Serien bis Großauflagen."
+      icon: <Sparkles className="h-6 w-6 stroke-1" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
+      title: "Saubere Veredelung",
+      description: "Präzise Umsetzung deines Designs mit professioneller Technik"
     }
   ];
 
@@ -78,7 +79,7 @@ const Homepage = () => {
 
   const processSteps = [
     "Du sagst uns Anlass, Stückzahl, Timing und Branding.",
-    "Wir erstellen Mockups, prüfen Druckdaten und bemustern bei Bedarf.",
+    "Wir erstellen Entwürfe (24 h), prüfen Druckdaten und bemustern bei Bedarf.",
     "Sichere Veredelung, Qualitätscheck, verlässliche Planung.",
     "Termingerecht zu dir – europaweit."
   ];
@@ -224,6 +225,9 @@ const Homepage = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <FAQ />
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-primary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -237,7 +241,7 @@ const Homepage = () => {
                          shadow-strong hover:shadow-medium transform hover:-translate-y-1 
                          transition-all duration-300 ease-out"
             >
-              Unverbindliches Angebot anfordern
+              Angebot anfragen
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>

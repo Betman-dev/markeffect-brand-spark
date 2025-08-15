@@ -20,14 +20,15 @@ Farbpalette: Weiß, Anthrazit, Hellblau
     --secondary: 208 56% 11%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Markeffect Design Tokens */
-    --mx-primary: 208 67% 20%;
-    --mx-ink-900: 206 66% 11%;
-    --mx-ink-800: 206 56% 18%;
-    --mx-ink-700: 206 44% 24%;
-    --mx-ink-600: 206 37% 31%;
-    --mx-ink-300: 206 17% 58%;
-    --mx-hero-bg: 208 64% 97%;
+    /* Markeffect Brand Colors */
+    --mx-primary: 211 100% 31%;           /* #0053A0 */
+    --mx-navy: 210 62% 12%;              /* Footer Navy */
+    --mx-ink-900: 210 67% 11%;           /* #0B1E2E */
+    --mx-ink-800: 211 58% 18%;           /* #173247 */
+    --mx-ink-700: 211 48% 25%;           /* #22445B */
+    --mx-ink-600: 211 40% 32%;           /* #2F5670 */
+    --mx-ink-300: 211 20% 62%;           /* #8FA6B7 */
+    --mx-hero-bg: 211 60% 97%;           /* #F3F7FB */
     
     /* Elegante neutrale Töne */
     --muted: 211 19% 96%;
@@ -160,17 +161,36 @@ Farbpalette: Weiß, Anthrazit, Hellblau
   
   .btn-primary {
     background: hsl(var(--mx-primary));
-    color: #fff;
+    color: white;
+    border: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px hsl(var(--mx-primary) / 0.2);
+  }
+  
+  .btn-primary:hover {
+    background: hsl(var(--mx-primary) / 0.9);
+    box-shadow: 0 4px 12px hsl(var(--mx-primary) / 0.3);
   }
   
   .btn-secondary {
     border: 1.5px solid hsl(var(--mx-primary));
     color: hsl(var(--mx-primary));
     background: transparent;
+    transition: all 0.2s ease;
   }
   
   .btn-secondary:hover {
     background: color-mix(in oklab, hsl(var(--mx-primary)) 12%, white);
+  }
+  
+  .hero .badge {
+    color: hsl(var(--mx-ink-300));
+    font-size: 0.875rem;
+  }
+  
+  .hero .reassurance {
+    color: hsl(var(--mx-ink-300));
+    font-size: 0.875rem;
   }
 
   /* Hero Button Variants */
