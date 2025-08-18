@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
 import ContactForm from "../components/ContactForm";
 import { Mail, MapPin } from "lucide-react";
+import contactHero from "../assets/contact-hero.jpg";
 
 const Contact = () => {
 
@@ -14,13 +15,19 @@ const Contact = () => {
       />
 
       {/* Hero Section */}
-      <section className="hero py-20 lg:py-32">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${contactHero})` }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="fade-in">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6" style={{ color: 'hsl(var(--mx-ink-700))' }}>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
               Angebot anfragen
             </h1>
-            <p className="lead mb-8 leading-relaxed" style={{ color: 'hsl(var(--mx-ink-600))' }}>
+            <p className="text-xl mb-8 leading-relaxed text-white/90">
               Erzähl uns kurz, was du vorhast – wir melden uns binnen 24–48 Std.
             </p>
           </div>

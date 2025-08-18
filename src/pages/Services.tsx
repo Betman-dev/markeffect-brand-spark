@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
 import { Link } from "react-router-dom";
 import { ArrowRight, Printer, Layers, Zap, Sparkles, Palette, HeadphonesIcon } from "lucide-react";
+import servicesHero from "../assets/services-hero.jpg";
 
 const Services = () => {
   const veredelungstechniken = [
@@ -59,13 +60,19 @@ const Services = () => {
       />
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${servicesHero})` }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="fade-in">
-            <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Veredelungen & Abwicklung
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
               Professionelle Veredelungstechniken für langlebige Markenwirkung. 
               Von der Beratung bis zur Lieferung – alles aus einer Hand.
             </p>

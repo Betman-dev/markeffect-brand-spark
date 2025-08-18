@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
+import privacyHero from "../assets/privacy-hero.jpg";
 
 const Privacy = () => {
   return (
@@ -10,16 +11,29 @@ const Privacy = () => {
         keywords="Datenschutz, DSGVO, Datenschutzerklärung, Markeffect, Datensicherheit"
       />
 
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${privacyHero})` }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="fade-in">
+            <h1 className="text-4xl font-bold text-white mb-8">
+              Datenschutzerklärung
+            </h1>
+            <p className="text-white/90 mb-8">
+              Stand: Januar 2024
+            </p>
+          </div>
+        </div>
+      </section>
+
       <div className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="fade-in">
-            <h1 className="text-4xl font-bold text-primary mb-8">
-              Datenschutzerklärung
-            </h1>
-            <p className="text-muted-foreground mb-8">
-              Stand: Januar 2024
-            </p>
-
             <div className="prose prose-lg max-w-none">
               <section className="mb-12">
                 <h2 className="text-2xl font-semibold text-primary mb-4">

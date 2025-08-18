@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
 import { Target, Heart, Lightbulb, CheckCircle } from "lucide-react";
-import consultationHero from "../assets/consultation-hero.jpg";
+import aboutHero from "../assets/about-hero.jpg";
 
 const About = () => {
   const values = [
@@ -66,8 +66,8 @@ const About = () => {
             <div className="fade-in-delay-1">
               <div className="image-hover">
                 <img
-                  src={consultationHero}
-                  alt="Markeffect Team bei der Beratung"
+                  src={aboutHero}
+                  alt="Markeffect Team bei der Zusammenarbeit"
                   className="w-full h-auto rounded-xl shadow-strong"
                 />
               </div>

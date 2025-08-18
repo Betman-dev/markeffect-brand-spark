@@ -6,6 +6,7 @@ import powerbankMockup from "../assets/powerbank-mockup.jpg";
 import notebookMockup from "../assets/notebook-mockup.jpg";
 import mugMockup from "../assets/mug-mockup.jpg";
 import usbMockup from "../assets/usb-mockup.jpg";
+import galleryHero from "../assets/gallery-hero.jpg";
 
 const Gallery = () => {
   const galleryItems = [
@@ -44,16 +45,22 @@ const Gallery = () => {
       />
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${galleryHero})` }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="fade-in">
-            <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Galerie
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
               Einblicke in realisierte Projekte und Mockups.
             </p>
-            <Link to="/kontakt" className="btn-hero-primary">
+            <Link to="/kontakt" className="inline-flex items-center bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
               Ihr Projekt starten
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
