@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
 import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, Factory, GraduationCap, Heart, Building } from "lucide-react";
+import industryHero from "../assets/industry-solutions-hero.jpg";
 
 const IndustrySolutions = () => {
   const industries = [
@@ -46,17 +47,23 @@ const IndustrySolutions = () => {
       />
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${industryHero})` }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="fade-in">
-            <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Branchenlösungen
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
               Jede Branche hat spezielle Anforderungen. Unsere Giveaways sind 
               perfekt auf Ihren Einsatzbereich abgestimmt.
             </p>
-            <Link to="/kontakt" className="btn-hero-primary">
+            <Link to="/kontakt" className="inline-flex items-center bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
               Branchenlösung anfragen
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
