@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
 import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, Factory, GraduationCap, Heart, Building } from "lucide-react";
-import industryHero from "../assets/industry-solutions-hero.jpg";
+import industryHero from "../assets/industry-solutions-hero-v2.jpg";
 
 const IndustrySolutions = () => {
   const industries = [
