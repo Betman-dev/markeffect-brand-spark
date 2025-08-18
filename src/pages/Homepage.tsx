@@ -3,6 +3,7 @@ import { ArrowRight, Target, CheckCircle, Clock, Users, Sparkles } from "lucide-
 import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
 import FAQ from "../components/FAQ";
+import CTABlock from "../components/CTABlock";
 import heroProductMosaic from "../assets/hero-product-mosaic.jpg";
 import powerbankMockup from "../assets/powerbank-mockup.jpg";
 import notebookMockup from "../assets/notebook-mockup.jpg";
@@ -108,18 +109,12 @@ const Homepage = () => {
                 Beratung, Mockups & EU-Produktion. Wir liefern termingerecht – ohne Preisliste, 
                 mit passender Kalkulation zu deinem Projekt.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                <Link to="/kontakt" className="btn-primary inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-                  Angebot anfragen
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-                <Link to="/galerie" className="btn-secondary inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-                  Beispiele ansehen
-                </Link>
-              </div>
-              <p className="text-sm" style={{ color: 'hsl(var(--mx-ink-300))' }}>
-                Wir melden uns innerhalb von 24–48 Stunden.
-              </p>
+              {/* Primary CTA in Hero */}
+              <CTABlock 
+                variant="hero" 
+                pageType="homepage" 
+                className="bg-transparent pt-0 pb-0"
+              />
             </div>
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-white shadow-xl">
@@ -201,6 +196,12 @@ const Homepage = () => {
         </div>
       </section>
 
+      {/* Secondary CTA after Services */}
+      <CTABlock 
+        variant="mid" 
+        pageType="homepage"
+      />
+
       {/* Process Section */}
       <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -228,25 +229,11 @@ const Homepage = () => {
       {/* FAQ Section */}
       <FAQ />
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-primary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="fade-in">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-              Bereit, dein Giveaway zu schärfen?
-            </h2>
-            <Link
-              to="/kontakt"
-              className="inline-flex items-center bg-white text-primary px-8 py-4 rounded-lg font-semibold
-                         shadow-strong hover:shadow-medium transform hover:-translate-y-1 
-                         transition-all duration-300 ease-out"
-            >
-              Angebot anfragen
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Final CTA before Footer */}
+      <CTABlock 
+        variant="footer" 
+        pageType="homepage"
+      />
     </Layout>
   );
 };

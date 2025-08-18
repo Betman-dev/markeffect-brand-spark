@@ -22,6 +22,7 @@ Farbpalette: Weiß, Anthrazit, Hellblau
 
     /* Markeffect Brand Colors */
     --mx-primary: 211 100% 31%;           /* #0053A0 */
+    --mx-primary-hover: 211 100% 28%;     /* Darker hover state */
     --mx-navy: 210 62% 12%;              /* Footer Navy */
     --mx-ink-900: 210 67% 11%;           /* #0B1E2E */
     --mx-ink-800: 211 58% 18%;           /* #173247 */
@@ -29,6 +30,7 @@ Farbpalette: Weiß, Anthrazit, Hellblau
     --mx-ink-600: 211 40% 32%;           /* #2F5670 */
     --mx-ink-300: 211 20% 62%;           /* #8FA6B7 */
     --mx-hero-bg: 211 60% 97%;           /* #F3F7FB */
+    --mx-cta-bg: 0 0% 98.5%;            /* #FCFCFC - Ultra light background for CTAs */
     
     /* Elegante neutrale Töne */
     --muted: 211 19% 96%;
@@ -221,6 +223,47 @@ Farbpalette: Weiß, Anthrazit, Hellblau
     @apply w-full h-full object-cover transform hover:scale-105 transition-transform duration-500;
   }
   
+  /* CTA Styles with High Conversion Focus */
+  .cta-card {
+    @apply bg-white rounded-2xl p-8 lg:p-12 shadow-soft border border-gray-100;
+    background-color: hsl(var(--mx-cta-bg));
+  }
+  
+  .cta-primary {
+    background-color: #0053a0;
+    color: white;
+    border: none;
+    min-height: 44px;
+    min-width: 44px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 83, 160, 0.2);
+  }
+  
+  .cta-primary:hover {
+    background-color: rgba(0, 83, 160, 0.9);
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 83, 160, 0.3);
+  }
+  
+  .cta-secondary {
+    background-color: white;
+    color: #0053a0;
+    border: 1.5px solid #0053a0;
+    min-height: 44px;
+    min-width: 44px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .cta-secondary:hover {
+    background-color: rgba(0, 83, 160, 0.05);
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(0, 83, 160, 0.15);
+  }
+  
+  .cta-section {
+    background-color: hsl(var(--mx-cta-bg));
+  }
+
   /* Fade In Animation */
   .fade-in {
     animation: fadeIn 0.8s ease-out forwards;

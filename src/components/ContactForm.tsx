@@ -112,6 +112,8 @@ const ContactForm = () => {
         
       </div>
 
+      <div id="formular"></div>
+      <div id="rueckruf"></div>
       <form onSubmit={handleSubmit} className="space-y-6" id="contact">
         {/* Honeypot field */}
         <input type="text" name="hp_website" value={formData.hp_website} onChange={handleChange} style={{
