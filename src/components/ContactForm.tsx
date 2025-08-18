@@ -7,7 +7,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Send, CheckCircle, Home } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -24,11 +23,9 @@ const ContactForm = () => {
     privacy: false,
     hp_website: "" // Honeypot field
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
@@ -37,14 +34,11 @@ const ContactForm = () => {
     if (formData.hp_website) {
       return; // Spam detected
     }
-
     if (!formData.privacy) {
       setError("Bitte stimme der Datenschutzerklärung zu.");
       return;
     }
-
     setIsSubmitting(true);
-
     try {
       const response = await fetch("https://formspree.io/f/xdkdebkl", {
         method: "POST",
@@ -66,7 +60,6 @@ const ContactForm = () => {
           usecase: formData.usecase
         })
       });
-
       if (response.ok) {
         setIsSubmitted(true);
       } else {
@@ -78,124 +71,79 @@ const ContactForm = () => {
       setIsSubmitting(false);
     }
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
+    const {
+      name,
+      value,
+      type
+    } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
     }));
   };
-
   const handleSelectChange = (name: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-
   if (isSubmitted) {
-    return (
-      <div className="max-w-2xl mx-auto text-center py-16">
+    return <div className="max-w-2xl mx-auto text-center py-16">
         <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
-        <h2 className="text-2xl font-bold mb-4" style={{ color: 'hsl(var(--mx-ink-700))' }}>
+        <h2 className="text-2xl font-bold mb-4" style={{
+        color: 'hsl(var(--mx-ink-700))'
+      }}>
           Danke für deine Anfrage!
         </h2>
-        <p className="text-lg mb-8" style={{ color: 'hsl(var(--mx-ink-600))' }}>
+        <p className="text-lg mb-8" style={{
+        color: 'hsl(var(--mx-ink-600))'
+      }}>
           Wir melden uns innerhalb von 24–48 h mit ersten Entwürfen.
         </p>
-        <Link
-          to="/"
-          className="btn-primary inline-flex items-center px-6 py-3 rounded-lg font-medium"
-        >
+        <Link to="/" className="btn-primary inline-flex items-center px-6 py-3 rounded-lg font-medium">
           <Home className="mr-2 h-4 w-4" />
           Zur Startseite
         </Link>
-      </div>
-    );
+      </div>;
   }
-
-  return (
-    <div className="max-w-4xl mx-auto">
+  return <div className="max-w-4xl mx-auto">
       <div className="text-center mb-8">
-        <Link 
-          to="#contact"
-          className="btn-secondary inline-flex items-center px-6 py-3 rounded-lg font-medium mb-8"
-        >
-          Angebot anfragen
-        </Link>
+        
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6" id="contact">
         {/* Honeypot field */}
-        <input
-          type="text"
-          name="hp_website"
-          value={formData.hp_website}
-          onChange={handleChange}
-          style={{ display: 'none' }}
-          tabIndex={-1}
-          autoComplete="off"
-        />
+        <input type="text" name="hp_website" value={formData.hp_website} onChange={handleChange} style={{
+        display: 'none'
+      }} tabIndex={-1} autoComplete="off" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <Label htmlFor="name">Name *</Label>
-            <Input
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Max Mustermann"
-              required
-              className="mt-1"
-            />
+            <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Max Mustermann" required className="mt-1" />
           </div>
           <div>
             <Label htmlFor="company">Firma *</Label>
-            <Input
-              id="company"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-              placeholder="Beispiel GmbH"
-              required
-              className="mt-1"
-            />
+            <Input id="company" name="company" value={formData.company} onChange={handleChange} placeholder="Beispiel GmbH" required className="mt-1" />
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <Label htmlFor="email">E-Mail *</Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="name@firma.de"
-              required
-              className="mt-1"
-            />
+            <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="name@firma.de" required className="mt-1" />
           </div>
           <div>
             <Label htmlFor="phone">Telefon</Label>
-            <Input
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="+49 ..."
-              className="mt-1"
-            />
+            <Input id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="+49 ..." className="mt-1" />
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
             <Label htmlFor="quantity">Stückzahl *</Label>
-            <Select onValueChange={(value) => handleSelectChange('quantity', value)}>
+            <Select onValueChange={value => handleSelectChange('quantity', value)}>
               <SelectTrigger className="mt-1">
                 <SelectValue placeholder="Wähle Menge" />
               </SelectTrigger>
@@ -210,19 +158,11 @@ const ContactForm = () => {
           </div>
           <div>
             <Label htmlFor="deadline">Deadline *</Label>
-            <Input
-              id="deadline"
-              name="deadline"
-              type="date"
-              value={formData.deadline}
-              onChange={handleChange}
-              required
-              className="mt-1"
-            />
+            <Input id="deadline" name="deadline" type="date" value={formData.deadline} onChange={handleChange} required className="mt-1" />
           </div>
           <div>
             <Label htmlFor="category">Kategorie *</Label>
-            <Select onValueChange={(value) => handleSelectChange('category', value)}>
+            <Select onValueChange={value => handleSelectChange('category', value)}>
               <SelectTrigger className="mt-1">
                 <SelectValue placeholder="Wähle Kategorie" />
               </SelectTrigger>
@@ -241,21 +181,14 @@ const ContactForm = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <Label htmlFor="finishing">Gewünschte Veredelung</Label>
-            <Input
-              id="finishing"
-              name="finishing"
-              value={formData.finishing}
-              onChange={handleChange}
-              placeholder="Druck, Stick, Gravur, ..."
-              className="mt-1"
-            />
+            <Input id="finishing" name="finishing" value={formData.finishing} onChange={handleChange} placeholder="Druck, Stick, Gravur, ..." className="mt-1" />
             <p className="text-sm text-muted-foreground mt-1">
               Vektorlogo bevorzugt (AI/EPS/SVG)
             </p>
           </div>
           <div>
             <Label htmlFor="budget">Budget (optional)</Label>
-            <Select onValueChange={(value) => handleSelectChange('budget', value)}>
+            <Select onValueChange={value => handleSelectChange('budget', value)}>
               <SelectTrigger className="mt-1">
                 <SelectValue placeholder="Ungefährer Rahmen" />
               </SelectTrigger>
@@ -272,61 +205,34 @@ const ContactForm = () => {
 
         <div>
           <Label htmlFor="usecase">Anlass / Einsatz</Label>
-          <Input
-            id="usecase"
-            name="usecase"
-            value={formData.usecase}
-            onChange={handleChange}
-            placeholder="Messe, Kundengeschenke, Onboarding, ..."
-            className="mt-1"
-          />
+          <Input id="usecase" name="usecase" value={formData.usecase} onChange={handleChange} placeholder="Messe, Kundengeschenke, Onboarding, ..." className="mt-1" />
         </div>
 
         <div>
           <Label htmlFor="message">Nachricht *</Label>
-          <Textarea
-            id="message"
-            name="message"
-            rows={4}
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Kurz dein Vorhaben und Designwunsch"
-            required
-            className="mt-1"
-          />
+          <Textarea id="message" name="message" rows={4} value={formData.message} onChange={handleChange} placeholder="Kurz dein Vorhaben und Designwunsch" required className="mt-1" />
         </div>
 
         <div className="flex items-start space-x-3">
-          <Checkbox
-            id="privacy"
-            name="privacy"
-            checked={formData.privacy}
-            onCheckedChange={(checked) => setFormData(prev => ({ ...prev, privacy: !!checked }))}
-            required
-          />
+          <Checkbox id="privacy" name="privacy" checked={formData.privacy} onCheckedChange={checked => setFormData(prev => ({
+          ...prev,
+          privacy: !!checked
+        }))} required />
           <Label htmlFor="privacy" className="text-sm leading-relaxed">
             Ich stimme zu, dass meine Angaben zur Beantwortung meiner Anfrage verarbeitet werden. 
             Hinweise in der <Link to="/datenschutz" className="text-primary hover:underline">Datenschutzerklärung</Link>.
           </Label>
         </div>
 
-        {error && (
-          <div className="text-red-600 text-sm p-3 bg-red-50 rounded-lg">
+        {error && <div className="text-red-600 text-sm p-3 bg-red-50 rounded-lg">
             {error}
-          </div>
-        )}
+          </div>}
 
-        <Button 
-          type="submit" 
-          className="btn-primary w-full sm:w-auto"
-          disabled={isSubmitting}
-        >
+        <Button type="submit" className="btn-primary w-full sm:w-auto" disabled={isSubmitting}>
           <Send className="mr-2 h-4 w-4" />
           {isSubmitting ? "Wird gesendet..." : "Angebot anfragen"}
         </Button>
       </form>
-    </div>
-  );
+    </div>;
 };
-
 export default ContactForm;
