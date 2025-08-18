@@ -1,21 +1,13 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-primary text-primary-foreground">
+  return <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Unternehmen */}
           <div>
-            <img 
-              src="/lovable-uploads/bf08d9bc-5a00-4904-aab3-8395f51527d6.png" 
-              alt="Markeffect Logo" 
-              className="h-8 w-auto mb-4 brightness-0 invert"
-            />
-            <p className="text-sm text-primary-foreground/80 mb-4">
-              Anderter Str. 36c · 30629 Hannover
-            </p>
+            <img src="/lovable-uploads/bf08d9bc-5a00-4904-aab3-8395f51527d6.png" alt="Markeffect Logo" className="h-8 w-auto mb-4 brightness-0 invert" />
+            
             <p className="text-sm text-primary-foreground/80">
               Hochwertige, individuell gebrandete Giveaways für Unternehmen aller Branchen.
             </p>
@@ -99,8 +91,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
