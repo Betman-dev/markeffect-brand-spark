@@ -94,59 +94,81 @@ const Homepage = () => {
       />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-screen flex items-center bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500">
+      <section className="relative overflow-hidden bg-gray-50 min-h-screen flex items-center">
         {/* Geometric Shapes */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Large pink circle */}
-          <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-pink-400 rounded-full opacity-80 transform -translate-y-1/2"></div>
+          {/* Yellow geometric shapes */}
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-yellow-400 transform rotate-12 rounded-3xl"></div>
+          <div className="absolute top-1/2 right-1/5 w-32 h-32 bg-yellow-300 transform -rotate-12 rounded-2xl"></div>
           
-          {/* Blue circles */}
-          <div className="absolute top-1/4 right-1/3 w-4 h-4 bg-blue-300 rounded-full"></div>
-          <div className="absolute top-3/4 left-1/4 w-8 h-8 bg-blue-400 rounded-full"></div>
+          {/* Green accents */}
+          <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-green-400 transform rotate-45 rounded-xl"></div>
+          <div className="absolute top-1/4 right-1/6 w-16 h-16 bg-green-300 transform -rotate-6 rounded-lg"></div>
           
-          {/* Purple elements */}
-          <div className="absolute bottom-1/4 right-1/6 w-6 h-6 bg-purple-400 rounded-full"></div>
-          <div className="absolute top-1/3 left-1/6 w-12 h-6 bg-purple-300 rounded-full"></div>
+          {/* Decorative elements */}
+          <div className="absolute top-1/5 right-1/2 w-8 h-8">
+            <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-yellow-500">
+              <path d="M12 2L15.09 8.26L22 9L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+          </div>
           
-          {/* Pink rounded rectangles */}
-          <div className="absolute bottom-1/3 left-1/3 w-8 h-16 bg-pink-300 rounded-full opacity-70"></div>
-          <div className="absolute top-1/5 right-1/5 w-6 h-12 bg-pink-400 rounded-full opacity-60"></div>
-          
-          {/* White circles */}
-          <div className="absolute top-1/6 left-1/2 w-3 h-3 bg-white rounded-full opacity-90"></div>
-          <div className="absolute bottom-1/5 right-1/3 w-5 h-5 bg-white rounded-full opacity-80"></div>
+          {/* Curved arrow */}
+          <div className="absolute bottom-1/4 left-1/2 w-16 h-16">
+            <svg viewBox="0 0 100 100" className="w-full h-full text-green-400">
+              <path d="M20,50 Q50,20 80,50" stroke="currentColor" strokeWidth="2" fill="none" markerEnd="url(#arrowhead)"/>
+              <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                  <polygon points="0 0, 10 3.5, 0 7" fill="currentColor"/>
+                </marker>
+              </defs>
+            </svg>
+          </div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="max-w-[62ch] text-white">
-              <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-8 text-white">
-                Auf Anfrage · Antwort in 24–48 h
+            <div className="max-w-[62ch]">
+              <div className="flex items-center gap-2 mb-8">
+                <span className="text-lg font-medium text-gray-800">HELLO!</span>
+                <div className="w-6 h-6">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-yellow-500">
+                    <path d="M12 2L15.09 8.26L22 9L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </div>
               </div>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-                Giveaways mit
+              
+              <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+                <span className="flex items-center gap-3">
+                  Giveaways 
+                  <span className="inline-block w-8 h-8 bg-green-400 rounded-full"></span>
+                  mit
+                </span>
                 <span className="block">Markenwirkung</span>
-                <span className="block text-white/90">– individuell veredelt.</span>
               </h1>
-              <p className="text-xl mb-10 text-white/90 leading-relaxed">
-                Beratung, Mockups & EU-Produktion. Wir liefern termingerecht – ohne Preisliste, 
-                mit passender Kalkulation zu deinem Projekt.
+              
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Werbeartikel-Agentur für individuelle Lösungen zur Stärkung 
+                deiner digitalen Präsenz und Markenwahrnehmung.
               </p>
-              {/* Primary CTA in Hero */}
-              <CTABlock 
-                variant="hero" 
-                pageType="homepage" 
-                className="bg-transparent pt-0 pb-0"
-              />
+              
+              {/* Small CTA Button */}
+              <button 
+                className="inline-flex items-center px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-medium rounded-lg transition-colors duration-200 text-sm"
+                onClick={() => window.location.href = '/kontakt#formular'}
+                data-cta-location="hero" 
+                data-cta-page="homepage"
+              >
+                Über uns
+              </button>
             </div>
+            
             <div className="relative lg:flex justify-center">
-              {/* Person image placeholder - could be replaced with actual image */}
               <div className="relative z-10">
-                <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+                <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-white shadow-2xl flex items-center justify-center">
                   <img
                     src={heroProductMosaic}
                     alt="Premium Werbeartikel Sortiment – Tassen, Powerbanks und Textilien mit professioneller Veredelung"
-                    className="w-full h-full object-cover rounded-full"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
