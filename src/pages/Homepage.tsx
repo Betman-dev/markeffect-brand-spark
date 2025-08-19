@@ -94,18 +94,41 @@ const Homepage = () => {
       />
       
       {/* Hero Section */}
-      <section className="hero py-28 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
-            <div className="max-w-[62ch] py-12 lg:py-24">
-              <div className="inline-block px-3 py-1 bg-white/80 rounded-full text-xs font-medium mb-6" 
-                   style={{ color: 'hsl(var(--mx-ink-300))' }}>
+      <section className="relative overflow-hidden min-h-screen flex items-center bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500">
+        {/* Geometric Shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Large pink circle */}
+          <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-pink-400 rounded-full opacity-80 transform -translate-y-1/2"></div>
+          
+          {/* Blue circles */}
+          <div className="absolute top-1/4 right-1/3 w-4 h-4 bg-blue-300 rounded-full"></div>
+          <div className="absolute top-3/4 left-1/4 w-8 h-8 bg-blue-400 rounded-full"></div>
+          
+          {/* Purple elements */}
+          <div className="absolute bottom-1/4 right-1/6 w-6 h-6 bg-purple-400 rounded-full"></div>
+          <div className="absolute top-1/3 left-1/6 w-12 h-6 bg-purple-300 rounded-full"></div>
+          
+          {/* Pink rounded rectangles */}
+          <div className="absolute bottom-1/3 left-1/3 w-8 h-16 bg-pink-300 rounded-full opacity-70"></div>
+          <div className="absolute top-1/5 right-1/5 w-6 h-12 bg-pink-400 rounded-full opacity-60"></div>
+          
+          {/* White circles */}
+          <div className="absolute top-1/6 left-1/2 w-3 h-3 bg-white rounded-full opacity-90"></div>
+          <div className="absolute bottom-1/5 right-1/3 w-5 h-5 bg-white rounded-full opacity-80"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="max-w-[62ch] text-white">
+              <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-8 text-white">
                 Auf Anfrage · Antwort in 24–48 h
               </div>
-              <h1 className="hero mb-8">
-                Giveaways mit Markenwirkung – individuell veredelt.
+              <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+                Giveaways mit
+                <span className="block">Markenwirkung</span>
+                <span className="block text-white/90">– individuell veredelt.</span>
               </h1>
-              <p className="lead mb-10">
+              <p className="text-xl mb-10 text-white/90 leading-relaxed">
                 Beratung, Mockups & EU-Produktion. Wir liefern termingerecht – ohne Preisliste, 
                 mit passender Kalkulation zu deinem Projekt.
               </p>
@@ -116,20 +139,17 @@ const Homepage = () => {
                 className="bg-transparent pt-0 pb-0"
               />
             </div>
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-white shadow-xl">
-                <img
-                  src={heroProductMosaic}
-                  alt="Premium Werbeartikel Sortiment – Tassen, Powerbanks und Textilien mit professioneller Veredelung"
-                  className="w-full h-full object-cover"
-                />
+            <div className="relative lg:flex justify-center">
+              {/* Person image placeholder - could be replaced with actual image */}
+              <div className="relative z-10">
+                <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+                  <img
+                    src={heroProductMosaic}
+                    alt="Premium Werbeartikel Sortiment – Tassen, Powerbanks und Textilien mit professioneller Veredelung"
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
               </div>
-              <div 
-                className="absolute inset-0 rounded-2xl"
-                style={{
-                  background: 'radial-gradient(circle at 30% 50%, transparent 40%, hsl(var(--mx-hero-bg)) 80%)'
-                }}
-              />
             </div>
           </div>
         </div>
