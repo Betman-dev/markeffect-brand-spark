@@ -94,59 +94,55 @@ const Homepage = () => {
       />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-screen flex items-center bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500">
-        {/* Geometric Shapes */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Large pink circle */}
-          <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-pink-400 rounded-full opacity-80 transform -translate-y-1/2"></div>
-          
-          {/* Blue circles */}
-          <div className="absolute top-1/4 right-1/3 w-4 h-4 bg-blue-300 rounded-full"></div>
-          <div className="absolute top-3/4 left-1/4 w-8 h-8 bg-blue-400 rounded-full"></div>
-          
-          {/* Purple elements */}
-          <div className="absolute bottom-1/4 right-1/6 w-6 h-6 bg-purple-400 rounded-full"></div>
-          <div className="absolute top-1/3 left-1/6 w-12 h-6 bg-purple-300 rounded-full"></div>
-          
-          {/* Pink rounded rectangles */}
-          <div className="absolute bottom-1/3 left-1/3 w-8 h-16 bg-pink-300 rounded-full opacity-70"></div>
-          <div className="absolute top-1/5 right-1/5 w-6 h-12 bg-pink-400 rounded-full opacity-60"></div>
-          
-          {/* White circles */}
-          <div className="absolute top-1/6 left-1/2 w-3 h-3 bg-white rounded-full opacity-90"></div>
-          <div className="absolute bottom-1/5 right-1/3 w-5 h-5 bg-white rounded-full opacity-80"></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="max-w-[62ch] text-white">
-              <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-8 text-white">
-                Auf Anfrage · Antwort in 24–48 h
+      <section className="bg-white border-b border-[#eef2f7] pt-32 pb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="max-w-[62ch]">
+              {/* Eyebrow */}
+              <div className="text-[#6b7280] text-sm font-medium mb-6 tracking-wide">
+                Auf Anfrage • Antwort in 24–48 h
               </div>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+              
+              {/* Main Headline */}
+              <h1 className="text-[56px] leading-[64px] font-extrabold tracking-[-0.02em] text-black mb-8">
                 Giveaways mit
                 <span className="block">Markenwirkung</span>
-                <span className="block text-white/90">– individuell veredelt.</span>
+                <span className="block">– individuell veredelt.</span>
               </h1>
-              <p className="text-xl mb-10 text-white/90 leading-relaxed">
+              
+              {/* Subline */}
+              <p className="text-[18px] leading-[28px] text-[#374151] mb-12 max-w-[52ch]">
                 Beratung, Mockups & EU-Produktion. Wir liefern termingerecht – ohne Preisliste, 
                 mit passender Kalkulation zu deinem Projekt.
               </p>
-              {/* Primary CTA in Hero */}
-              <CTABlock 
-                variant="hero" 
-                pageType="homepage" 
-                className="bg-transparent pt-0 pb-0"
-              />
+              
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-6 items-start">
+                <Link
+                  to="/kontakt#formular"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-black text-white text-sm font-semibold rounded-full hover:bg-gray-800 transition-colors duration-200"
+                  data-cta-location="hero"
+                >
+                  Angebot anfordern
+                </Link>
+                <Link
+                  to="/kontakt#rueckruf"
+                  className="text-black text-sm font-medium hover:text-gray-600 transition-colors duration-200 underline underline-offset-4"
+                  data-cta-location="hero-secondary"
+                >
+                  Beratung buchen →
+                </Link>
+              </div>
             </div>
+            
+            {/* Hero Image Card */}
             <div className="relative lg:flex justify-center">
-              {/* Person image placeholder - could be replaced with actual image */}
-              <div className="relative z-10">
-                <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+              <div className="bg-[#f8fafc] rounded-[24px] p-8 shadow-lg shadow-black/5">
+                <div className="aspect-[4/3] overflow-hidden rounded-2xl">
                   <img
                     src={heroProductMosaic}
                     alt="Premium Werbeartikel Sortiment – Tassen, Powerbanks und Textilien mit professioneller Veredelung"
-                    className="w-full h-full object-cover rounded-full"
+                    className="w-full h-full object-cover saturate-90"
                   />
                 </div>
               </div>
