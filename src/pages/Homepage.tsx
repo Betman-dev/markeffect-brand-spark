@@ -196,9 +196,9 @@ const Homepage = () => {
         </div>
       </section>
 
-      {/* Secondary CTA after Services */}
+      {/* Inline CTA after Categories */}
       <CTABlock 
-        variant="mid" 
+        variant="inline" 
         pageType="homepage"
       />
 
@@ -231,7 +231,7 @@ const Homepage = () => {
 
       {/* Final CTA before Footer */}
       <CTABlock 
-        variant="footer" 
+        variant="footer-soft" 
         pageType="homepage"
       />
     </Layout>
