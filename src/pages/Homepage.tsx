@@ -93,56 +93,70 @@ const Homepage = () => {
         keywords="Werbeartikel, Giveaways, Veredelung, Siebdruck, Stick, Gravur, EU-Produktion, Markenwirkung"
       />
       
-      {/* Hero Section */}
-      <section className="bg-white border-b border-[#eef2f7] pt-32 pb-24">
+      {/* Hero Section - Apple Style */}
+      <section className="bg-white pt-32 lg:pt-36 pb-24 lg:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className="max-w-[62ch]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="max-w-[580px]">
               {/* Eyebrow */}
               <div className="text-[#6b7280] text-sm font-medium mb-6 tracking-wide">
                 Auf Anfrage • Antwort in 24–48 h
               </div>
               
               {/* Main Headline */}
-              <h1 className="text-[56px] leading-[64px] font-extrabold tracking-[-0.02em] text-black mb-8">
-                Giveaways mit
-                <span className="block">Markenwirkung</span>
-                <span className="block">– individuell veredelt.</span>
+              <h1 className="text-[clamp(36px,4.2vw,56px)] leading-[1.1] font-extrabold tracking-[-0.02em] text-[#0a0a0a] mb-6">
+                Exklusive Werbeartikel.
+                <span className="block">Präzise veredelt.</span>
               </h1>
               
               {/* Subline */}
-              <p className="text-[18px] leading-[28px] text-[#374151] mb-12 max-w-[52ch]">
-                Beratung, Mockups & EU-Produktion. Wir liefern termingerecht – ohne Preisliste, 
-                mit passender Kalkulation zu deinem Projekt.
+              <p className="text-[18px] leading-[1.55] text-[#374151] mb-8 max-w-[520px]">
+                Beratung, Mockups & EU-Produktion – ohne Preisliste und exakt kalkuliert für Ihr Projekt.
               </p>
               
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-6 items-start">
+              <div className="flex flex-col sm:flex-row gap-4 items-start mb-8">
                 <Link
                   to="/kontakt#formular"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-black text-white text-sm font-semibold rounded-full hover:bg-gray-800 transition-colors duration-200"
+                  className="inline-flex items-center justify-center px-7 py-3.5 bg-[#0a0a0a] text-white text-sm font-semibold rounded-full hover:bg-[#1a1a1a] transition-colors duration-200"
                   data-cta-location="hero"
                 >
                   Angebot anfordern
                 </Link>
                 <Link
                   to="/kontakt#rueckruf"
-                  className="text-black text-sm font-medium hover:text-gray-600 transition-colors duration-200 underline underline-offset-4"
+                  className="text-[#0a0a0a] text-sm font-medium hover:text-[#374151] transition-colors duration-200 underline underline-offset-4"
                   data-cta-location="hero-secondary"
                 >
                   Beratung buchen →
                 </Link>
               </div>
+
+              {/* Trust Badges */}
+              <div className="flex flex-wrap gap-3">
+                <span className="inline-flex items-center px-3 py-1.5 bg-[#eaf2fb] text-[#0053a0] text-xs font-medium rounded-full">
+                  EU-Produktion
+                </span>
+                <span className="inline-flex items-center px-3 py-1.5 bg-[#eaf2fb] text-[#0053a0] text-xs font-medium rounded-full">
+                  Beratung & Mockups
+                </span>
+                <span className="inline-flex items-center px-3 py-1.5 bg-[#eaf2fb] text-[#0053a0] text-xs font-medium rounded-full">
+                  DSGVO-konform
+                </span>
+                <span className="inline-flex items-center px-3 py-1.5 bg-[#eaf2fb] text-[#0053a0] text-xs font-medium rounded-full">
+                  Termingerechte Lieferung
+                </span>
+              </div>
             </div>
             
             {/* Hero Image Card */}
-            <div className="relative lg:flex justify-center">
-              <div className="bg-[#f8fafc] rounded-[24px] p-8 shadow-lg shadow-black/5">
+            <div className="relative lg:flex justify-center order-first lg:order-last">
+              <div className="bg-[#f8fafc] rounded-3xl p-6 lg:p-8 shadow-soft">
                 <div className="aspect-[4/3] overflow-hidden rounded-2xl">
                   <img
                     src={heroProductMosaic}
-                    alt="Premium Werbeartikel Sortiment – Tassen, Powerbanks und Textilien mit professioneller Veredelung"
-                    className="w-full h-full object-cover saturate-90"
+                    alt="Exklusive Werbeartikel – Premium Tassen, Powerbanks und Textilien mit professioneller Veredelung"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
