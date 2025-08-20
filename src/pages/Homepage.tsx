@@ -10,6 +10,10 @@ import powerbankMockup from "../assets/powerbank-mockup.jpg";
 import notebookMockup from "../assets/notebook-mockup.jpg";
 import mugMockup from "../assets/mug-mockup.jpg";
 import usbMockup from "../assets/usb-mockup.jpg";
+import heroSlide01 from "../assets/hero-slide-01.webp";
+import heroSlide02 from "../assets/hero-slide-02.webp";
+import heroSlide03 from "../assets/hero-slide-03.webp";
+import heroSlide04 from "../assets/hero-slide-04.webp";
 
 const Homepage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -17,20 +21,20 @@ const Homepage = () => {
 
   const carouselImages = [
     {
-      src: mugMockup,
-      alt: "Premium Tasse mit individueller Veredelung"
+      src: heroSlide01,
+      alt: "Premium-Notizbuch-Set mit USB-Stick, minimalistisch arrangiert"
     },
     {
-      src: usbMockup,
-      alt: "USB-Stick mit Firmenlogo"
+      src: heroSlide02,
+      alt: "Weiße Tasse mit dezentem Logo auf hellem Untergrund"
     },
     {
-      src: notebookMockup,
-      alt: "Hochwertiges Notizbuch mit Branding"
+      src: heroSlide03,
+      alt: "Navy-Cap mit feiner Stickerei und Keytag im Flat-Lay"
     },
     {
-      src: powerbankMockup,
-      alt: "Powerbank mit Unternehmenslogo"
+      src: heroSlide04,
+      alt: "Matte Powerbank mit schlichter Verpackung und dezentem Markenakzent"
     }
   ];
 
