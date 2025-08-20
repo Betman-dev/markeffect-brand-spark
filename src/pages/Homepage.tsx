@@ -200,18 +200,23 @@ const Homepage = () => {
                 aria-label="Premium-Flat-Lay individuell veredelter Werbeartikel"
               >
                 <div className="aspect-[4/3] overflow-hidden rounded-2xl relative">
-                  {carouselImages.map((image, index) => (
-                    <img
-                      key={index}
-                      src={image.src}
-                      alt={image.alt}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                        index === currentSlide ? 'opacity-100' : 'opacity-0'
-                      }`}
-                      loading={index === 0 ? 'eager' : 'lazy'}
-                      style={{ filter: 'saturate(0.9)' }}
-                    />
-                  ))}
+                  {carouselImages.map((image, index) => {
+                    console.log(`Carousel image ${index}:`, image.src, 'Current slide:', currentSlide);
+                    return (
+                      <img
+                        key={index}
+                        src={image.src}
+                        alt={image.alt}
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                          index === currentSlide ? 'opacity-100' : 'opacity-0'
+                        }`}
+                        loading={index === 0 ? 'eager' : 'lazy'}
+                        style={{ filter: 'saturate(0.9)' }}
+                        onLoad={() => console.log(`Image ${index} loaded successfully`)}
+                        onError={() => console.log(`Image ${index} failed to load:`, image.src)}
+                      />
+                    );
+                  })}
                   {!window.matchMedia('(prefers-reduced-motion: reduce)').matches && (
                     <button
                       onClick={() => setIsPaused(!isPaused)}
