@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, CheckCircle, Clock, Users, Sparkles, Check } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Target, CheckCircle, Clock, Users, Sparkles } from "lucide-react";
 import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
 import FAQ from "../components/FAQ";
@@ -10,46 +9,9 @@ import powerbankMockup from "../assets/powerbank-mockup.jpg";
 import notebookMockup from "../assets/notebook-mockup.jpg";
 import mugMockup from "../assets/mug-mockup.jpg";
 import usbMockup from "../assets/usb-mockup.jpg";
-import heroSlide01 from "../assets/hero-slide-01.webp";
-import heroSlide02 from "../assets/hero-slide-02.webp";
-import heroSlide03 from "../assets/hero-slide-03.webp";
-import heroSlide04 from "../assets/hero-slide-04.webp";
+import heroExplodedKit from "../assets/hero-exploded-kit.webp";
 
 const Homepage = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  const carouselImages = [
-    {
-      src: heroSlide01,
-      alt: "Premium-Notizbuch-Set mit USB-Stick, minimalistisch arrangiert"
-    },
-    {
-      src: heroSlide02,
-      alt: "Weiße Tasse mit dezentem Logo auf hellem Untergrund"
-    },
-    {
-      src: heroSlide03,
-      alt: "Navy-Cap mit feiner Stickerei und Keytag im Flat-Lay"
-    },
-    {
-      src: heroSlide04,
-      alt: "Matte Powerbank mit schlichter Verpackung und dezentem Markenakzent"
-    }
-  ];
-
-  useEffect(() => {
-    if (isPaused) return;
-    
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
-
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
-    }, 7000);
-
-    return () => clearInterval(interval);
-  }, [isPaused, carouselImages.length]);
 
   const usps = [
     {
@@ -133,9 +95,9 @@ const Homepage = () => {
         keywords="Werbeartikel, Giveaways, Veredelung, Siebdruck, Stick, Gravur, EU-Produktion, Markenwirkung"
       />
       
-      <section className="bg-white border-b border-[#eef2f7] pt-32 lg:pt-36 pb-24 lg:pb-28">
+      <section className="bg-white border-b border-[#eef2f7] pt-[120px] lg:pt-[140px] pb-[96px] lg:pb-[110px]">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[54fr_46fr] gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[54fr_46fr] gap-14 lg:gap-16 items-center">
             <div className="max-w-[560px]">
               <div className="text-[#6b7280] text-[14px] font-medium mb-6">
                 Antwort in 24–48 h
@@ -150,7 +112,7 @@ const Homepage = () => {
                 Beratung, Mockups & EU-Produktion – ohne Preisliste und exakt kalkuliert für Ihr Projekt.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 items-start mb-6">
+              <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 items-start mb-4">
                 <Link
                   to="/kontakt#formular"
                   className="inline-flex items-center justify-center px-7 py-3.5 bg-[#0a0a0a] text-white text-[14px] font-semibold rounded-full hover:bg-[#1a1a1a] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#0a0a0a] focus:ring-offset-2"
@@ -167,65 +129,25 @@ const Homepage = () => {
                 </Link>
               </div>
 
-              <div className="flex flex-wrap gap-3 mb-4">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#eaf2fb] text-[#0a0a0a] text-[12px] font-medium rounded-full">
-                  <Check className="h-3 w-3 text-[#0053a0]" />
-                  EU-Produktion
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#eaf2fb] text-[#0a0a0a] text-[12px] font-medium rounded-full">
-                  <Check className="h-3 w-3 text-[#0053a0]" />
-                  Beratung & Mockups
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#eaf2fb] text-[#0a0a0a] text-[12px] font-medium rounded-full">
-                  <Check className="h-3 w-3 text-[#0053a0]" />
-                  DSGVO-konform
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#eaf2fb] text-[#0a0a0a] text-[12px] font-medium rounded-full">
-                  <Check className="h-3 w-3 text-[#0053a0]" />
-                  Termingerechte Lieferung
-                </span>
+              <div className="text-[#0a0a0a] text-[14px] font-medium mb-3">
+                Kostenlose Erstberatung
               </div>
 
-              <div className="text-[#0a0a0a] text-[14px] font-medium">
-                Kostenlose Erstberatung
+              <div className="text-[#6b7280] text-[14px]">
+                EU-Produktion • DSGVO-konform
               </div>
             </div>
             
             <div className="relative lg:flex justify-center order-first lg:order-last">
-              <div 
-                className="bg-[#f8fafc] rounded-3xl p-6 lg:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] relative overflow-hidden group"
-                onMouseEnter={() => setIsPaused(true)}
-                onMouseLeave={() => setIsPaused(false)}
-                role="img"
-                aria-label="Premium-Flat-Lay individuell veredelter Werbeartikel"
-              >
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl relative">
-                  {carouselImages.map((image, index) => {
-                    console.log(`Carousel image ${index}:`, image.src, 'Current slide:', currentSlide);
-                    return (
-                      <img
-                        key={index}
-                        src={image.src}
-                        alt={image.alt}
-                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                          index === currentSlide ? 'opacity-100' : 'opacity-0'
-                        }`}
-                        loading={index === 0 ? 'eager' : 'lazy'}
-                        style={{ filter: 'saturate(0.9)' }}
-                        onLoad={() => console.log(`Image ${index} loaded successfully`)}
-                        onError={() => console.log(`Image ${index} failed to load:`, image.src)}
-                      />
-                    );
-                  })}
-                  {!window.matchMedia('(prefers-reduced-motion: reduce)').matches && (
-                    <button
-                      onClick={() => setIsPaused(!isPaused)}
-                      className="absolute bottom-3 right-3 text-[12px] text-[#6b7280] hover:text-[#0a0a0a] transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none"
-                      aria-label={isPaused ? 'Play carousel' : 'Pause carousel'}
-                    >
-                      {isPaused ? 'Play' : 'Pause'}
-                    </button>
-                  )}
+              <div className="bg-[#f8fafc] rounded-[24px] lg:rounded-[28px] p-6 lg:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)]">
+                <div className="aspect-[4/3] overflow-hidden rounded-2xl">
+                  <img
+                    src={heroExplodedKit}
+                    alt="Explodierte Ansicht eines veredelten Produkt-Sets auf weißem Hintergrund"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                    style={{ filter: 'saturate(0.95)' }}
+                  />
                 </div>
               </div>
             </div>
