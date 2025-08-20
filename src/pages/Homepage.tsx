@@ -9,7 +9,7 @@ import powerbankMockup from "../assets/powerbank-mockup.jpg";
 import notebookMockup from "../assets/notebook-mockup.jpg";
 import mugMockup from "../assets/mug-mockup.jpg";
 import usbMockup from "../assets/usb-mockup.jpg";
-import heroBlueRibbonKit from "../assets/hero-blue-ribbon-kit.webp";
+import heroWelcomeKitExploded from "../assets/hero-welcome-kit-exploded.webp";
 
 const Homepage = () => {
 
@@ -128,8 +128,8 @@ const Homepage = () => {
               <div className="bg-[#f8fafc] rounded-[24px] lg:rounded-[28px] p-6 lg:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)]">
                 <div className="aspect-[4/3] overflow-hidden rounded-2xl">
                   <img
-                    src={heroBlueRibbonKit}
-                    alt="Explodiertes Produkt-Set mit blauem Band in M-Form – dynamisches Flat-Lay auf Weiß"
+                    src={heroWelcomeKitExploded}
+                    alt="Welcome-Kit: Thermobecher, Slim-Powerbank, USB-C-Kabel, NFC- und Infokarte mit blauem Band – explodiertes Set auf weißem Hintergrund"
                     className="w-full h-full object-cover"
                     loading="eager"
                     style={{ filter: 'saturate(0.95)' }}
