@@ -9,7 +9,7 @@ import powerbankMockup from "../assets/powerbank-mockup.jpg";
 import notebookMockup from "../assets/notebook-mockup.jpg";
 import mugMockup from "../assets/mug-mockup.jpg";
 import usbMockup from "../assets/usb-mockup.jpg";
-import heroExplodedKit from "../assets/hero-exploded-kit.webp";
+import heroBlueRibbonKit from "../assets/hero-blue-ribbon-kit.webp";
 
 const Homepage = () => {
 
@@ -95,46 +95,32 @@ const Homepage = () => {
         keywords="Werbeartikel, Giveaways, Veredelung, Siebdruck, Stick, Gravur, EU-Produktion, Markenwirkung"
       />
       
-      <section className="bg-white border-b border-[#eef2f7] pt-[120px] lg:pt-[140px] pb-[96px] lg:pb-[110px]">
+      <section className="bg-white pt-[128px] pb-[104px]">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[54fr_46fr] gap-14 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-15 lg:gap-[60px] items-center">
             <div className="max-w-[560px]">
               <div className="text-[#6b7280] text-[14px] font-medium mb-6">
-                Antwort in 24–48 h
+                Erstes Mockup in 24 h
               </div>
               
               <h1 className="text-[clamp(36px,4.5vw,56px)] leading-[1.1] font-extrabold tracking-[-0.015em] text-[#0a0a0a] mb-6">
-                Exklusive Werbeartikel.
-                <span className="block">Präzise veredelt</span>
+                Giveaways, die man behält.
               </h1>
               
               <p className="text-[18px] leading-[1.55] text-[#374151] mb-8 max-w-[56ch]">
-                Beratung, Mockups & EU-Produktion – ohne Preisliste und exakt kalkuliert für Ihr Projekt.
+                Wir entwickeln und veredeln Markenartikel, die im Alltag wirklich genutzt werden – Design, Muster in 24 h und verlässliche EU-Produktion aus einer Hand.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 items-start mb-4">
-                <Link
-                  to="/kontakt#formular"
-                  className="inline-flex items-center justify-center px-7 py-3.5 bg-[#0a0a0a] text-white text-[14px] font-semibold rounded-full hover:bg-[#1a1a1a] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#0a0a0a] focus:ring-offset-2"
-                  data-cta-location="hero"
-                >
-                  Angebot anfragen
-                </Link>
-                <Link
-                  to="/kontakt#rueckruf"
-                  className="text-[#0a0a0a] text-[14px] font-medium hover:text-[#374151] transition-colors duration-200 underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-[#0a0a0a] focus:ring-offset-2 focus:ring-opacity-50"
-                  data-cta-location="hero-secondary"
-                >
-                  Beratung buchen →
-                </Link>
-              </div>
+              <Link
+                to="/kontakt#formular"
+                className="inline-flex items-center justify-center px-7 py-3.5 bg-[#0a0a0a] text-white text-[14px] font-semibold rounded-full hover:bg-[#1a1a1a] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#0a0a0a] focus:ring-offset-2 mb-4"
+                data-cta-location="hero"
+              >
+                Angebot anfragen
+              </Link>
 
-              <div className="text-[#0a0a0a] text-[14px] font-medium mb-3">
+              <div className="text-[#0a0a0a] text-[14px] font-medium">
                 Kostenlose Erstberatung
-              </div>
-
-              <div className="text-[#6b7280] text-[14px]">
-                EU-Produktion • DSGVO-konform
               </div>
             </div>
             
@@ -142,8 +128,8 @@ const Homepage = () => {
               <div className="bg-[#f8fafc] rounded-[24px] lg:rounded-[28px] p-6 lg:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)]">
                 <div className="aspect-[4/3] overflow-hidden rounded-2xl">
                   <img
-                    src={heroExplodedKit}
-                    alt="Explodierte Ansicht eines veredelten Produkt-Sets auf weißem Hintergrund"
+                    src={heroBlueRibbonKit}
+                    alt="Explodiertes Produkt-Set mit blauem Band in M-Form – dynamisches Flat-Lay auf Weiß"
                     className="w-full h-full object-cover"
                     loading="eager"
                     style={{ filter: 'saturate(0.95)' }}
