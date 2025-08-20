@@ -193,7 +193,7 @@ const Homepage = () => {
             
             <div className="relative lg:flex justify-center order-first lg:order-last">
               <div 
-                className="bg-[#f8fafc] rounded-3xl p-6 lg:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] relative overflow-hidden"
+                className="bg-[#f8fafc] rounded-3xl p-6 lg:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] relative overflow-hidden group"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
                 role="img"
@@ -220,7 +220,7 @@ const Homepage = () => {
                   {!window.matchMedia('(prefers-reduced-motion: reduce)').matches && (
                     <button
                       onClick={() => setIsPaused(!isPaused)}
-                      className="absolute bottom-3 right-3 text-[12px] text-[#6b7280] hover:text-[#0a0a0a] transition-colors opacity-0 hover:opacity-100 focus:opacity-100 focus:outline-none"
+                      className="absolute bottom-3 right-3 text-[12px] text-[#6b7280] hover:text-[#0a0a0a] transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none"
                       aria-label={isPaused ? 'Play carousel' : 'Pause carousel'}
                     >
                       {isPaused ? 'Play' : 'Pause'}
