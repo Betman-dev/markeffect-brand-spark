@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, CheckCircle, Clock, Users, Sparkles } from "lucide-react";
+import { ArrowRight, Target, CheckCircle, Clock, Users, Sparkles, Check } from "lucide-react";
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
 import FAQ from "../components/FAQ";
@@ -11,6 +12,41 @@ import mugMockup from "../assets/mug-mockup.jpg";
 import usbMockup from "../assets/usb-mockup.jpg";
 
 const Homepage = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const carouselImages = [
+    {
+      src: mugMockup,
+      alt: "Premium Tasse mit individueller Veredelung"
+    },
+    {
+      src: usbMockup,
+      alt: "USB-Stick mit Firmenlogo"
+    },
+    {
+      src: notebookMockup,
+      alt: "Hochwertiges Notizbuch mit Branding"
+    },
+    {
+      src: powerbankMockup,
+      alt: "Powerbank mit Unternehmenslogo"
+    }
+  ];
+
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+    }, 7000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, carouselImages.length]);
+
   const usps = [
     {
       icon: <Target className="h-6 w-6 stroke-1" style={{ color: 'hsl(var(--mx-ink-600))' }} />,
@@ -93,71 +129,94 @@ const Homepage = () => {
         keywords="Werbeartikel, Giveaways, Veredelung, Siebdruck, Stick, Gravur, EU-Produktion, Markenwirkung"
       />
       
-      {/* Hero Section - Apple Style */}
-      <section className="bg-white pt-32 lg:pt-36 pb-24 lg:pb-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="max-w-[580px]">
-              {/* Eyebrow */}
-              <div className="text-[#6b7280] text-sm font-medium mb-6 tracking-wide">
-                Auf Anfrage • Antwort in 24–48 h
+      <section className="bg-white border-b border-[#eef2f7] pt-32 lg:pt-36 pb-24 lg:pb-28">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[54fr_46fr] gap-12 lg:gap-16 items-center">
+            <div className="max-w-[560px]">
+              <div className="text-[#6b7280] text-[14px] font-medium mb-6">
+                Antwort in 24–48 h
               </div>
               
-              {/* Main Headline */}
-              <h1 className="text-[clamp(36px,4.2vw,56px)] leading-[1.1] font-extrabold tracking-[-0.02em] text-[#0a0a0a] mb-6">
+              <h1 className="text-[clamp(36px,4.5vw,56px)] leading-[1.1] font-extrabold tracking-[-0.015em] text-[#0a0a0a] mb-6">
                 Exklusive Werbeartikel.
-                <span className="block">Präzise veredelt.</span>
+                <span className="block">Präzise veredelt</span>
               </h1>
               
-              {/* Subline */}
-              <p className="text-[18px] leading-[1.55] text-[#374151] mb-8 max-w-[520px]">
+              <p className="text-[18px] leading-[1.55] text-[#374151] mb-8 max-w-[56ch]">
                 Beratung, Mockups & EU-Produktion – ohne Preisliste und exakt kalkuliert für Ihr Projekt.
               </p>
               
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 items-start mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 items-start mb-6">
                 <Link
                   to="/kontakt#formular"
-                  className="inline-flex items-center justify-center px-7 py-3.5 bg-[#0a0a0a] text-white text-sm font-semibold rounded-full hover:bg-[#1a1a1a] transition-colors duration-200"
+                  className="inline-flex items-center justify-center px-7 py-3.5 bg-[#0a0a0a] text-white text-[14px] font-semibold rounded-full hover:bg-[#1a1a1a] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#0a0a0a] focus:ring-offset-2"
                   data-cta-location="hero"
                 >
-                  Angebot anfordern
+                  Angebot anfragen
                 </Link>
                 <Link
                   to="/kontakt#rueckruf"
-                  className="text-[#0a0a0a] text-sm font-medium hover:text-[#374151] transition-colors duration-200 underline underline-offset-4"
+                  className="text-[#0a0a0a] text-[14px] font-medium hover:text-[#374151] transition-colors duration-200 underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-[#0a0a0a] focus:ring-offset-2 focus:ring-opacity-50"
                   data-cta-location="hero-secondary"
                 >
                   Beratung buchen →
                 </Link>
               </div>
 
-              {/* Trust Badges */}
-              <div className="flex flex-wrap gap-3">
-                <span className="inline-flex items-center px-3 py-1.5 bg-[#eaf2fb] text-[#0053a0] text-xs font-medium rounded-full">
+              <div className="flex flex-wrap gap-3 mb-4">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#eaf2fb] text-[#0a0a0a] text-[12px] font-medium rounded-full">
+                  <Check className="h-3 w-3 text-[#0053a0]" />
                   EU-Produktion
                 </span>
-                <span className="inline-flex items-center px-3 py-1.5 bg-[#eaf2fb] text-[#0053a0] text-xs font-medium rounded-full">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#eaf2fb] text-[#0a0a0a] text-[12px] font-medium rounded-full">
+                  <Check className="h-3 w-3 text-[#0053a0]" />
                   Beratung & Mockups
                 </span>
-                <span className="inline-flex items-center px-3 py-1.5 bg-[#eaf2fb] text-[#0053a0] text-xs font-medium rounded-full">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#eaf2fb] text-[#0a0a0a] text-[12px] font-medium rounded-full">
+                  <Check className="h-3 w-3 text-[#0053a0]" />
                   DSGVO-konform
                 </span>
-                <span className="inline-flex items-center px-3 py-1.5 bg-[#eaf2fb] text-[#0053a0] text-xs font-medium rounded-full">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#eaf2fb] text-[#0a0a0a] text-[12px] font-medium rounded-full">
+                  <Check className="h-3 w-3 text-[#0053a0]" />
                   Termingerechte Lieferung
                 </span>
               </div>
+
+              <div className="text-[#0a0a0a] text-[14px] font-medium">
+                Kostenlose Erstberatung
+              </div>
             </div>
             
-            {/* Hero Image Card */}
             <div className="relative lg:flex justify-center order-first lg:order-last">
-              <div className="bg-[#f8fafc] rounded-3xl p-6 lg:p-8 shadow-soft">
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl">
-                  <img
-                    src={heroProductMosaic}
-                    alt="Exklusive Werbeartikel – Premium Tassen, Powerbanks und Textilien mit professioneller Veredelung"
-                    className="w-full h-full object-cover"
-                  />
+              <div 
+                className="bg-[#f8fafc] rounded-3xl p-6 lg:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] relative overflow-hidden"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                role="img"
+                aria-label="Premium-Flat-Lay individuell veredelter Werbeartikel"
+              >
+                <div className="aspect-[4/3] overflow-hidden rounded-2xl relative">
+                  {carouselImages.map((image, index) => (
+                    <img
+                      key={index}
+                      src={image.src}
+                      alt={image.alt}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                        index === currentSlide ? 'opacity-100' : 'opacity-0'
+                      }`}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      style={{ filter: 'saturate(0.9)' }}
+                    />
+                  ))}
+                  {!window.matchMedia('(prefers-reduced-motion: reduce)').matches && (
+                    <button
+                      onClick={() => setIsPaused(!isPaused)}
+                      className="absolute bottom-3 right-3 text-[12px] text-[#6b7280] hover:text-[#0a0a0a] transition-colors opacity-0 hover:opacity-100 focus:opacity-100 focus:outline-none"
+                      aria-label={isPaused ? 'Play carousel' : 'Pause carousel'}
+                    >
+                      {isPaused ? 'Play' : 'Pause'}
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
