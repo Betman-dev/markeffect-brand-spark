@@ -9,7 +9,7 @@ import powerbankMockup from "../assets/powerbank-mockup.jpg";
 import notebookMockup from "../assets/notebook-mockup.jpg";
 import mugMockup from "../assets/mug-mockup.jpg";
 import usbMockup from "../assets/usb-mockup.jpg";
-import heroWelcomeKitExploded from "../assets/hero-welcome-kit-exploded.webp";
+import heroWelcomeKitMarkeffect from "../assets/hero-welcome-kit-markeffect.webp";
 
 const Homepage = () => {
 
@@ -125,14 +125,16 @@ const Homepage = () => {
             </div>
             
             <div className="relative lg:flex justify-center order-first lg:order-last">
-              <div className="bg-[#f8fafc] rounded-[24px] lg:rounded-[28px] p-6 lg:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)]">
+              <div className="bg-white rounded-[26px] lg:rounded-[28px] p-6 lg:p-8 shadow-[0_8px_40px_-8px_rgba(0,0,0,0.06)]">
                 <div className="aspect-[4/3] overflow-hidden rounded-2xl">
                   <img
-                    src={heroWelcomeKitExploded}
-                    alt="Welcome-Kit: Thermobecher, Slim-Powerbank, USB-C-Kabel, NFC- und Infokarte mit blauem Band – explodiertes Set auf weißem Hintergrund"
-                    className="w-full h-full object-cover"
+                    src="/lovable-uploads/689fc2b0-138a-483b-b5d0-33b7d469196c.png"
+                    alt="Welcome-Kit: Tasse, Slim-Powerbank, USB-C-Kabel, NFC- und Infokarte mit blauem Band – explodiertes Set auf weißem Hintergrund"
+                    className="w-full h-full object-cover object-center"
                     loading="eager"
-                    style={{ filter: 'saturate(0.95)' }}
+                    fetchPriority="high"
+                    decoding="async"
+                    sizes="(min-width: 1024px) 46vw, 100vw"
                   />
                 </div>
               </div>
