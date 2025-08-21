@@ -106,32 +106,6 @@ const CTABlock = ({
       </section>;
   }
 
-  // Inline variant - subtle, slim CTA
-  if (variant === 'inline') {
-    return <div className={`py-8 text-center ${className}`}>
-        <div className="max-w-md mx-auto px-4">
-          <p className="text-base mb-4" style={{
-          color: 'hsl(var(--mx-ink-600))'
-        }}>
-            {content.shortText}
-          </p>
-          <Link to={content.secondaryLink || "/kontakt#rueckruf"} className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-sm border-2 transition-all duration-200 hover:scale-105" style={{
-          borderColor: '#0053a0',
-          color: '#0053a0',
-          backgroundColor: 'transparent'
-        }} onMouseEnter={e => {
-          e.currentTarget.style.backgroundColor = '#0053a0';
-          e.currentTarget.style.color = 'white';
-        }} onMouseLeave={e => {
-          e.currentTarget.style.backgroundColor = 'transparent';
-          e.currentTarget.style.color = '#0053a0';
-        }} onClick={() => handleCTAClick('secondary')} data-gtag="cta_click" data-cta-location={variant} data-cta-page={pageType} data-cta-type="secondary">
-            <Phone className="mr-2 h-4 w-4" />
-            {content.secondaryText}
-          </Link>
-        </div>
-      </div>;
-  }
 
   // Footer-soft variant - text link
   if (variant === 'footer-soft') {
