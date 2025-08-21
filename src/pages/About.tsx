@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
 import { Clock, User, Shield, Calendar, CheckCircle, Mail, ArrowRight, Users, Palette, Package } from "lucide-react";
-import workspaceDesk from "../assets/workspace-desk.jpg";
+import indesignWorkspace from "../assets/indesign-workspace.jpg";
 import embroideryMacro from "../assets/embroidery-macro.jpg";
 import laserEngravingMacro from "../assets/laser-engraving-macro.jpg";
 import padPrintingMacro from "../assets/pad-printing-macro.jpg";
@@ -276,12 +276,12 @@ const About = () => {
               Hinter den Kulissen
             </h2>
             <img 
-              src={workspaceDesk}
-              alt="Arbeitsplatz mit Musterteilen und Farbkarten"
+              src={indesignWorkspace}
+              alt="Design-Arbeitsplatz mit Adobe InDesign"
               className="w-full h-96 object-cover rounded-lg mb-6"
             />
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Musterteile, Farbkarten und das blaue Band – hier entstehen Ihre Ideen.
+              Hier entstehen Ihre Mockups: Von der ersten Skizze bis zum finalen Layout.
             </p>
           </div>
         </div>
