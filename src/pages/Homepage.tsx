@@ -119,9 +119,6 @@ const Homepage = () => {
                 Angebot anfragen
               </Link>
 
-              <div className="text-[#0a0a0a] text-[14px] font-medium">
-                Kostenlose Erstberatung
-              </div>
             </div>
             
             <div className="relative lg:flex justify-center order-first lg:order-last">
