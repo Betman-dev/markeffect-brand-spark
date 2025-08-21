@@ -8,44 +8,24 @@ import {
 const FAQ = () => {
   const faqs = [
     {
-      question: "Welche Mindestmenge braucht ihr für eine Anfrage?",
-      answer: "Ab 25 Stück können wir wirtschaftlich produzieren. Je nach Artikel und Veredelung sind auch kleinere Mengen möglich – frag einfach nach."
+      question: "Wie läuft die Anfrage ab?",
+      answer: "Sie senden kurz Ihre Idee, Menge und Logo. Wir melden uns zeitnah mit passenden Vorschlägen und einem ersten Mockup."
     },
     {
-      question: "Wie schnell könnt ihr liefern?",
-      answer: "Standard-Lieferzeit beträgt 2-3 Wochen ab Freigabe des Entwurfs. Express-Service (5-10 Werktage) ist gegen Aufpreis möglich."
+      question: "Gibt es Mindestmengen?",
+      answer: "Ja, das hängt vom Artikel und der Veredelung ab. Nennen Sie uns Ihre Wunschmenge – wir schlagen die sinnvollste Option vor."
     },
     {
-      question: "Macht ihr auch internationale Lieferungen?",
-      answer: "Ja, wir liefern EU-weit. Versandkosten und Lieferzeiten teilen wir individuell mit."
+      question: "Wie lange dauern Produktion und Lieferung?",
+      answer: "Projektabhängig. Im Angebot erhalten Sie einen verbindlichen Zeitplan; auf Wunsch prüfen wir eine beschleunigte Umsetzung."
     },
     {
-      question: "Bekomme ich vor Produktion eine Vorschau?",
-      answer: "Ja, du erhältst kostenlos digitale Entwürfe zur Freigabe. Physische Muster sind je nach Artikel gegen Aufpreis möglich."
+      question: "Welche Druckdaten benötigt ihr?",
+      answer: "Vektordaten sind ideal. Falls nicht vorhanden, bereiten wir Ihr Logo auf und stimmen Farben und Platzierung gemeinsam ab."
     },
     {
-      question: "Welche Dateiformate braucht ihr für Logos?",
-      answer: "Am besten Vektordateien (AI, EPS, SVG) oder hochauflösende PNG/JPG mit transparentem Hintergrund (mindestens 300 DPI)."
-    },
-    {
-      question: "Könnt ihr nachhaltige/Eco-Artikel anbieten?",
-      answer: "Ja, wir haben eine große Auswahl an nachhaltigen Produkten: recycelte Materialien, Bio-Baumwolle, FSC-Papier, etc."
-    },
-    {
-      question: "Ist eine Teillieferung möglich?",
-      answer: "Bei größeren Mengen (ab 500 Stück) können wir auf Wunsch in Teilchargen liefern."
-    },
-    {
-      question: "Bietet ihr auch Lagerung an?",
-      answer: "Ja, wir können deine Artikel einlagern und bei Bedarf portionsweise versenden (Call-off-Service)."
-    },
-    {
-      question: "Was kostet eine Änderung am Entwurf?",
-      answer: "Kleinere Anpassungen (Farbe, Text) sind meist kostenlos. Größere Design-Änderungen berechnen wir nach Aufwand."
-    },
-    {
-      question: "Wie läuft die Bezahlung ab?",
-      answer: "Standardmäßig auf Rechnung (Zahlungsziel 14 Tage). Bei Neukunden oder größeren Aufträgen eventuell 50% Anzahlung."
+      question: "Kann ich vorab ein Muster bekommen?",
+      answer: "Ein digitales Mockup ist immer möglich; ein physisches Muster prüfen wir je nach Produkt und Verfügbarkeit."
     }
   ];
 
