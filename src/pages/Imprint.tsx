@@ -66,7 +66,7 @@ const Imprint = () => {
                 </h2>
                 <div className="bg-muted p-6 rounded-lg">
                   <p className="text-muted-foreground mb-2">
-                    Max Mustermann<br />
+                    Bajram Gashi<br />
                     Anderter Str. 36c<br />
                     30629 Hannover
                   </p>
