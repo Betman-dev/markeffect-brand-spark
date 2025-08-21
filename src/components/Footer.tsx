@@ -53,10 +53,7 @@ const Footer = () => {
                 <Mail className="h-4 w-4 text-secondary" />
                 <span className="text-sm text-primary-foreground/80">info@markeffect.de</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-secondary" />
-                <span className="text-sm text-primary-foreground/80">+49 (0) 123 456 789</span>
-              </div>
+              
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-secondary" />
                 <span className="text-sm text-primary-foreground/80">
