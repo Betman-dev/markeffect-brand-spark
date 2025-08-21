@@ -57,9 +57,7 @@ const Imprint = () => {
                 <h2 className="text-2xl font-semibold text-primary mb-6">
                   Geschäftsführung
                 </h2>
-                <p className="text-muted-foreground mb-4">
-                  Max Mustermann
-                </p>
+                <p className="text-muted-foreground mb-4">Bajram Gashi</p>
               </section>
 
               <section className="mb-12">
