@@ -1,22 +1,15 @@
 import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
 import privacyHero from "../assets/privacy-hero.jpg";
-
 const Privacy = () => {
-  return (
-    <Layout>
-      <SEOHead
-        title="Datenschutzerklärung - Markeffect | Ihre Daten sind sicher"
-        description="Datenschutzerklärung von Markeffect: Erfahren Sie, wie wir Ihre persönlichen Daten schützen und verarbeiten. Transparenz und Sicherheit haben höchste Priorität."
-        keywords="Datenschutz, DSGVO, Datenschutzerklärung, Markeffect, Datensicherheit"
-      />
+  return <Layout>
+      <SEOHead title="Datenschutzerklärung - Markeffect | Ihre Daten sind sicher" description="Datenschutzerklärung von Markeffect: Erfahren Sie, wie wir Ihre persönlichen Daten schützen und verarbeiten. Transparenz und Sicherheit haben höchste Priorität." keywords="Datenschutz, DSGVO, Datenschutzerklärung, Markeffect, Datensicherheit" />
 
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${privacyHero})` }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: `url(${privacyHero})`
+      }}>
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -24,9 +17,7 @@ const Privacy = () => {
             <h1 className="text-4xl font-bold text-white mb-8">
               Datenschutzerklärung
             </h1>
-            <p className="text-white/90 mb-8">
-              Stand: Januar 2024
-            </p>
+            <p className="text-white/90 mb-8">Stand: August 2025</p>
           </div>
         </div>
       </section>
@@ -201,8 +192,6 @@ const Privacy = () => {
           </div>
         </div>
       </div>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Privacy;
