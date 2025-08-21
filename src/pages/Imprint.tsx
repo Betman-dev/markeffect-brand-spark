@@ -1,22 +1,15 @@
 import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
 import imprintHero from "../assets/imprint-hero.jpg";
-
 const Imprint = () => {
-  return (
-    <Layout>
-      <SEOHead
-        title="Impressum - Markeffect | Rechtliche Informationen"
-        description="Impressum von Markeffect: Alle rechtlichen Informationen, Kontaktdaten und Angaben gemäß § 5 TMG auf einen Blick."
-        keywords="Impressum, Markeffect, rechtliche Informationen, Kontakt, TMG"
-      />
+  return <Layout>
+      <SEOHead title="Impressum - Markeffect | Rechtliche Informationen" description="Impressum von Markeffect: Alle rechtlichen Informationen, Kontaktdaten und Angaben gemäß § 5 TMG auf einen Blick." keywords="Impressum, Markeffect, rechtliche Informationen, Kontakt, TMG" />
 
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${imprintHero})` }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: `url(${imprintHero})`
+      }}>
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -56,16 +49,8 @@ const Imprint = () => {
               </section>
 
               <section className="mb-12">
-                <h2 className="text-2xl font-semibold text-primary mb-6">
-                  Registereintrag
-                </h2>
-                <div className="bg-muted p-6 rounded-lg">
-                  <p className="text-muted-foreground mb-2">
-                    <strong>Registergericht:</strong> Amtsgericht Hannover<br />
-                    <strong>Registernummer:</strong> HRB 123456<br />
-                    <strong>Umsatzsteuer-ID:</strong> DE123456789 (gemäß §27a Umsatzsteuergesetz)
-                  </p>
-                </div>
+                
+                
               </section>
 
               <section className="mb-12">
@@ -187,8 +172,6 @@ const Imprint = () => {
           </div>
         </div>
       </div>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Imprint;
