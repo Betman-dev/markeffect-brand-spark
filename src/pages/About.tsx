@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import SEOHead from "../components/SEOHead";
 import ErrorBoundary from "../components/ErrorBoundary";
+import { Link } from "react-router-dom";
 import { Clock, User, Shield, Calendar, CheckCircle, Mail, ArrowRight, Users, Palette, Package } from "lucide-react";
 import workspaceDesk from "../assets/workspace-desk.jpg";
 import embroideryMacro from "../assets/embroidery-macro.jpg";
@@ -129,13 +130,13 @@ const About = () => {
               </div>
 
               <div className="text-center">
-                <a 
-                  href="/kontakt#anfrage"
+                <Link 
+                  to="/kontakt#anfrage"
                   className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold text-lg hover:bg-primary/90 transition-colors"
                 >
                   Kostenloses Mockup anfragen
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -291,13 +292,13 @@ const About = () => {
             <h2 className="text-4xl lg:text-5xl font-bold mb-8">
               Wenn dein Giveaway Eindruck macht – war's Markeffect.
             </h2>
-            <a 
-              href="/kontakt#anfrage"
+            <Link 
+              to="/kontakt#anfrage"
               className="inline-flex items-center px-8 py-4 bg-background text-foreground rounded-full font-semibold text-lg hover:bg-background/90 transition-colors"
             >
               Projekt starten
               <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
+            </Link>
           </div>
         </section>
       </ErrorBoundary>
