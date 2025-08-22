@@ -230,34 +230,34 @@ Farbpalette: Weiß, Anthrazit, Hellblau
   }
   
   .cta-primary {
-    background-color: #0053a0;
+    background-color: hsl(var(--mx-primary));
     color: white;
     border: none;
     min-height: 44px;
     min-width: 44px;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 8px rgba(0, 83, 160, 0.2);
+    box-shadow: 0 2px 8px hsl(var(--mx-primary) / 0.2);
   }
   
   .cta-primary:hover {
-    background-color: rgba(0, 83, 160, 0.9);
+    background-color: hsl(var(--mx-primary-hover));
     transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0, 83, 160, 0.3);
+    box-shadow: 0 4px 12px hsl(var(--mx-primary) / 0.3);
   }
   
   .cta-secondary {
-    background-color: white;
-    color: #0053a0;
-    border: 1.5px solid #0053a0;
+    background-color: hsl(var(--background));
+    color: hsl(var(--mx-primary));
+    border: 1.5px solid hsl(var(--mx-primary));
     min-height: 44px;
     min-width: 44px;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .cta-secondary:hover {
-    background-color: rgba(0, 83, 160, 0.05);
+    background-color: hsl(var(--mx-primary) / 0.05);
     transform: scale(1.02);
-    box-shadow: 0 2px 8px rgba(0, 83, 160, 0.15);
+    box-shadow: 0 2px 8px hsl(var(--mx-primary) / 0.15);
   }
   
   .cta-section {
