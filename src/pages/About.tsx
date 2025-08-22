@@ -3,7 +3,7 @@ import SEOHead from "../components/SEOHead";
 import ErrorBoundary from "../components/ErrorBoundary";
 import { Link } from "react-router-dom";
 import { Clock, User, Shield, Calendar, CheckCircle, Mail, ArrowRight, Users, Palette, Package } from "lucide-react";
-import workspaceDesk from "../assets/workspace-desk.jpg";
+import workspaceSamplesDesk from "../assets/workspace-samples-desk.jpg";
 import embroideryMacro from "../assets/embroidery-macro.jpg";
 import laserEngravingMacro from "../assets/laser-engraving-macro.jpg";
 import padPrintingMacro from "../assets/pad-printing-macro.jpg";
@@ -272,7 +272,7 @@ const About = () => {
                 Hinter den Kulissen
               </h2>
               <img 
-                src={workspaceDesk}
+                src={workspaceSamplesDesk}
                 alt="Arbeitstisch mit Musterteilen, Farbkarten, Caps, Tassen, USB-Sticks und blauem Band als Akzent"
                 className="w-full h-96 object-cover rounded-lg mb-8"
                 width={1920}
